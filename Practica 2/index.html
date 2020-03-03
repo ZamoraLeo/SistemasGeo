@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Navigator</title>
+    <style>
+
+        .parrafos {
+            font-size: 5em;
+        }
+
+        .texto1 {
+            border: #000 solid 1px;
+        }
+
+        #boton {
+            background-color: #ff0000;
+            color: #000;
+            font-size: 30px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Ejemplo de Navigator</h1>
+
+    <button id="boton" onclick="obtieneDatos()">Obtiene datos del navegador</button>
+
+    <p class="parrafos texto1">Este es parrafo 1</p>
+    <p class="parrafos">Este es parrafo 2</p>
+
+    <ul id="navegador">
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+    <script>
+        var navegador = document.getElementById("navegador");
+        var datos = document.getElementsByTagName("li");
+
+        function obtieneDatos() {
+            console.log("Nombre del navegador: " + navigator.appCodeName);
+            console.log("Estatus del navegador: " + navigator.onLine);
+        }
+    </script>
+</body>
+</html>
