@@ -31,16 +31,24 @@
     <p class="parrafos">Este es parrafo 2</p>
 
     <ul id="navegador">
-        <li></li>
-        <li></li>
-        <li></li>
+        <li id="nav"></li>
+        <li id="inter"></li>
     </ul>
 
     <script>
         var navegador = document.getElementById("navegador");
-        var datos = document.getElementsByTagName("li");
+        
 
         function obtieneDatos() {
+            document.getElementById("nav").innerHTML = navigator.appCodeName;
+            if(navigator.onLine = true)
+            {
+                document.getElementById("inter").innerHTML = "Si hay internet";
+            }
+            else
+            {
+                document.getElementById("nav").innerHTML = "No hay internet";
+            }
             console.log("Nombre del navegador: " + navigator.appCodeName);
             console.log("Estatus del navegador: " + navigator.onLine);
         }
