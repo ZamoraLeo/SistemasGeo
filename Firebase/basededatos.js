@@ -1,11 +1,11 @@
 var firebaseConfig = {
-    apiKey: "AIzaSyCrXFL_mMbyLRVSC9Fn6_lfsDjMx54EzlE",
-    authDomain: "proyecto1-935aa.firebaseapp.com",
-    databaseURL: "https://proyecto1-935aa.firebaseio.com",
-    projectId: "proyecto1-935aa",
-    storageBucket: "proyecto1-935aa.appspot.com",
-    messagingSenderId: "514873387506",
-    appId: "1:514873387506:web:fa75cac073ad42be0b636b"
+    apiKey: "AIzaSyB8Vt9CZ8__jXuX9PQlM9t_zEs5KygYEZg",
+    authDomain: "practica1-63892-d4ece.firebaseapp.com",
+    databaseURL: "https://practica1-63892-d4ece.firebaseio.com",
+    projectId: "practica1-63892-d4ece",
+    storageBucket: "practica1-63892-d4ece.appspot.com",
+    messagingSenderId: "71721413932",
+    appId: "1:71721413932:web:76cdb358d3076c26c31089"
 };
 
 firebase.initializeApp(firebaseConfig);
