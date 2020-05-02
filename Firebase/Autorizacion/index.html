@@ -4,11 +4,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DLS EATS</title>
 
+    <!-- Bootstrap -->
     <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 
+    <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     
     <style>
@@ -37,6 +39,7 @@
         </div>
     </nav>
 
+    <!-- Modal Ingresar -->
     <div class="modal fade" id="ingresarmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -78,6 +81,8 @@
         </div>
     </div>
 
+
+    <!-- Modal Registrate -->
     <div class="modal fade" id="registratemodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -129,6 +134,7 @@
         </div>
     </div>
 
+    <!-- Modal MiCuenta -->
     <div class="modal fade" id="micuentamodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -157,27 +163,32 @@
         </div>
     </div>
 
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-firestore.js"></script>
 
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+
     <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyB8Vt9CZ8__jXuX9PQlM9t_zEs5KygYEZg",
+            authDomain: "practica1-63892-d4ece.firebaseapp.com",
+            databaseURL: "https://practica1-63892-d4ece.firebaseio.com",
+            projectId: "practica1-63892-d4ece",
+            storageBucket: "practica1-63892-d4ece.appspot.com",
+            messagingSenderId: "71721413932",
+            appId: "1:71721413932:web:a82623e7ee5abaacc31089"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
 
-    var firebaseConfig = {
-        apiKey: "AIzaSyB8Vt9CZ8__jXuX9PQlM9t_zEs5KygYEZg",
-        authDomain: "practica1-63892-d4ece.firebaseapp.com",
-        databaseURL: "https://practica1-63892-d4ece.firebaseio.com",
-        projectId: "practica1-63892-d4ece",
-        storageBucket: "practica1-63892-d4ece.appspot.com",
-        messagingSenderId: "71721413932",
-        appId: "1:71721413932:web:a82623e7ee5abaacc31089"
-    };
+        const auth = firebase.auth();
 
-    firebase.initializeApp(firebaseConfig);
-
-    const auth = firebase.auth();
-
-    const db = firebase.firestore();
+        const db = firebase.firestore();
 
     </script>
 
