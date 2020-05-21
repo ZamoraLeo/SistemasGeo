@@ -32,13 +32,17 @@
                 <div id="map2"></div>
                 <p>Mapa sin Controles</p>
             </div>
+            <div class="col-12 col-md-6">
+                <div id="map3"></div>
+                <p>Mapa Zoom Desactivado</p>
+            </div>
         </div>
     </div>
 
     <script>
         function iniciaMapa(){
             var coordenadas = { lat: 21.152639, lng:  -101.711598 };
-
+            
             var propiedades = {
                 center: coordenadas,
                 zoom: 12
@@ -48,9 +52,17 @@
             var propiedades2 = {
                 center: coordenadas,
                 zoom: 12,
-                disableDefaultUI: true
+                disableDefaultUI = true
             };
-            var mapa2 = new google.maps.Map(document.getElementById('map2'),propiedades2);
+            var map2 = new google.maps.Map(document.getElementById('map2'),propiedades2)
+
+            var propiedades3 = {
+                center: coordenadas,
+                zoom: 12,
+                zoomContro: false,
+                scaleControl: true
+            };
+            var map3 = new google.maps.Map(document.getElementById('map3'),propiedades3)
         }
     </script>
     
