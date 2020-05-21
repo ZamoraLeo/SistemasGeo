@@ -38,7 +38,7 @@
     <script>
         function iniciaMapa(){
             var coordenadas = { lat: 21.152639, lng:  -101.711598 };
-            
+
             var propiedades = {
                 center: coordenadas,
                 zoom: 12
@@ -48,9 +48,9 @@
             var propiedades2 = {
                 center: coordenadas,
                 zoom: 12,
-                disableDefaultUI = true
+                disableDefaultUI: true
             };
-            var map2 = new google.maps.Map(document.getElementById('map2'),propiedades2)
+            var mapa2 = new google.maps.Map(document.getElementById('map2'),propiedades2);
         }
     </script>
     
