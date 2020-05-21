@@ -28,8 +28,6 @@
                 <div id="map1"></div>
                 <p>Mapa Estandar</p>
             </div>
-        </div>
-        <div class="row">
             <div class="col-12 col-md-6">
                 <div id="map2"></div>
                 <p>Mapa sin Controles</p>
@@ -40,16 +38,12 @@
         function iniciaMapa(){
             var coordenadas = { lat: 21.152639, lng:  -101.711598 };
             var propiedades = {
-                center: { 
-                    lat: coordenadas
-                },
+                center: coordenadas,
                 zoom: 12
             };
             var map1 = new google.maps.Map(document.getElementById('map1'),propiedades)
             var propiedades2 = {
-                center: { 
-                    lat: coordenadas
-                },
+                center: coordenadas,
                 zoom: 12,
                 disableDefaultUI = true
             };
