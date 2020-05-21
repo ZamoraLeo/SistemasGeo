@@ -47,22 +47,21 @@
                 center: coordenadas,
                 zoom: 12
             };
-            var map1 = new google.maps.Map(document.getElementById('map1'),propiedades)
+            var map1 = new google.maps.Map(document.getElementById('map1'),propiedades);
 
             var propiedades2 = {
                 center: coordenadas,
                 zoom: 12,
                 disableDefaultUI = true
             };
-            var map2 = new google.maps.Map(document.getElementById('map2'),propiedades2)
+            var map2 = new google.maps.Map(document.getElementById('map2'),propiedades2);
 
             var propiedades3 = {
                 center: coordenadas,
                 zoom: 12,
                 zoomControl: false,
-                scaleControl: false
+                scaleControl: true
             };
-            
             var map3 = new google.maps.Map(document.getElementById('map3'),propiedades3);
         }
     </script>
