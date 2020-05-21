@@ -36,7 +36,11 @@
         <div class="row">
             <div class="col-12 col-md-6">
                 <div id="map3"></div>
-                <p>Mapa Zoom desactivado</p>
+                <p>Mapa Zoom Desactivado</p>
+            </div>
+            <div class="col-12 col-md-6">
+                <div id="map4"></div>
+                <p>Mapa ControlOptions</p>
             </div>
         </div>
     </div>
@@ -64,6 +68,18 @@
                 scaleControl: false
             };
             var map3 = new google.maps.Map(document.getElementById('map3'),propiedades3);
+
+            var propiedades4 = {
+                center: coordenadas,
+                zoom: 12,
+                mapTypeControl: true,
+                mapTypeControlOptions : {
+                    style : google.maps.MapTypeControlStyle.DROPDOWN_MENU,
+                    mapTypeIds : [ 'roadmap', 'satellite', 'terrain']
+                }
+
+            };
+            var mapa4 = new google.maps.Map(document.getElementById('mapa4'),propiedades4);
         }
     </script>
     
