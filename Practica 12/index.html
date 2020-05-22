@@ -30,7 +30,7 @@
             </div>
             <div class="col-12 col-md-6">
                 <div id="map2"></div>
-                <p>Mapa sin Controles</p>
+                <p>Regresar al centro</p>
             </div>
         </div>
         <div class="row">
@@ -77,7 +77,7 @@
                 position: coordenadas,
                 map: map2
             });
-            mapa.addListener('center_changed', function(){
+            map2.addListener('center_changed', function(){
                 window.setTimeout(function(){
                     mapa2.panTo(marcador2.getPosition);
                 },3000);
