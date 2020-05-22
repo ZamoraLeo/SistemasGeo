@@ -40,7 +40,7 @@
             </div>
             <div class="col-12 col-md-6">
                 <div id="map4"></div>
-                <p>Mapa ControlOptions</p>
+                <p>Centrar en Marcadores Colocados</p>
             </div>
         </div>
         <div class="row">
@@ -91,6 +91,11 @@
             infoWindow.open(map3);
             map3.addListener('zoom_changed', function(){
                 infoWindow.setContent('Zoom: ' + map3.getZoom());
+            });
+
+            var map4 = new google.maps.Map(document.getElementById('map4'),propiedades);
+            map4.addListener('dblclick', function(e){
+                console.log(e);
             });
         }
     </script>
