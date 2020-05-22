@@ -94,7 +94,7 @@
             });
 
             var map4 = new google.maps.Map(document.getElementById('map4'),propiedades);
-            map4.addListener('dblclick', function(e){
+            map4.addListener('click', function(e){
                 console.log(e.latLng);
                 estableceMarcador(e.latLng);
             });
