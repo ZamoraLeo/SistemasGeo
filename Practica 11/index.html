@@ -50,7 +50,7 @@
             </div>
             <div class="col-12 col-md-6">
                 <div id="map6"></div>
-                <p>Mapa 6</p>
+                <p>Mapa con Limites</p>
             </div>
         </div>
     </div>
@@ -111,9 +111,19 @@
             };
             var map5 = new google.maps.Map(document.getElementById('map5'),propiedades5);
 
+            var limites = {
+                north: 21.177365,
+                south: 21.086763,
+                west: -101.771625,
+                east: 21.123707
+            }
             var propiedades6 = {
                 center: coordenadas,
-                zoom: 12
+                zoom: 12,
+                restriction: {
+                    latLngBounds: limites,
+                    strictBounds: false
+                }
             };
             var map6 = new google.maps.Map(document.getElementById('map6'),propiedades6);
         }
