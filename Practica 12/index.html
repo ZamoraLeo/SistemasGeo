@@ -26,7 +26,7 @@
         <div class="row">
             <div class="col-12 col-md-6">
                 <div id="map1"></div>
-                <p>Mapa Estandar</p>
+                <p>Mapa Evento Click</p>
             </div>
             <div class="col-12 col-md-6">
                 <div id="map2"></div>
@@ -63,15 +63,24 @@
                 zoom: 12
             };
             var map1 = new google.maps.Map(document.getElementById('map1'),propiedades);
-
             var marcador = new google.maps.Marker({
                 position: coordenadas,
                 map: map1
             });
-
             marcador.addListener('click', function(){
                 map1.setZoom(8);
                 map1.setCenter(marcador.getPosition());
+            });
+
+            var map2 = new google.maps.Map(document.getElementById('map2'),propiedades);
+            var marcador2 = new google.maps.Marker({
+                position: coordenadas,
+                map: map2
+            });
+            mapa.addListener('center_changed', function(){
+                window.setTimeout(function(){
+                    mapa2.panTo(marcador2.getPosition);
+                },3000);
             });
         }
     </script>
