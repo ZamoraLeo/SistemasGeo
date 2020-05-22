@@ -79,7 +79,7 @@
             });
             map2.addListener('center_changed', function(){
                 window.setTimeout(function(){
-                    map2.panTo(marcador2.getPosition);
+                    map2.panTo(marcador2.getPosition());
                 },3000);
             });
         }
