@@ -82,6 +82,16 @@
                     map2.panTo(marcador2.getPosition());
                 },3000);
             });
+
+            var map3 = new google.maps.Map(document.getElementById('map3'),propiedades);
+            var infoWindow = new google.maps.InfoWindow({
+                content: 'Cambiar Zoom',
+                position: coordenadas
+            });
+            infoWindow.open(map3);
+            map3.addListener('zoom_changed', function(){
+                infoWindow.setContent('Zoom' + map3.getZoom());
+            });
         }
     </script>
     
