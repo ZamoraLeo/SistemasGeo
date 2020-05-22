@@ -46,7 +46,7 @@
         <div class="row">
             <div class="col-12 col-md-6">
                 <div id="map5"></div>
-                <p>Mapa Opciones Modificadas</p>
+                <p>Obtener Coordenadas</p>
             </div>
             <div class="col-12 col-md-6">
                 <div id="map6"></div>
@@ -105,6 +105,19 @@
                 });
                 map4.panTo(latLng);
             }
+
+            var map5 = new google.maps.Map(document.getElementById('map5'),propiedades);
+            var infoWindow = new google.maps.InfoWindow({
+                content: 'Coordenadas (Hacer click en el mapa)',
+                position: coordenadas
+            });
+            infoWindow2.open(map5);
+            map5.addListener('click', function(e){
+                infoWindow.close();
+                infoWindow = new google.maps.InfoWindow({ position: e.latLng });
+                infoWindow.setContent(e.latLng.toString());
+                infoWindow.open(map5);
+            });
         }
     </script>
     
