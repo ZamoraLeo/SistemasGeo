@@ -36,7 +36,7 @@
         <div class="row">
             <div class="col-12 col-md-6">
                 <div id="map3"></div>
-                <p>Mapa Zoom Desactivado</p>
+                <p>Ver Zoom</p>
             </div>
             <div class="col-12 col-md-6">
                 <div id="map4"></div>
@@ -90,7 +90,7 @@
             });
             infoWindow.open(map3);
             map3.addListener('zoom_changed', function(){
-                infoWindow.setContent('Zoom' + map3.getZoom());
+                infoWindow.setContent('Zoom: ' + map3.getZoom());
             });
         }
     </script>
