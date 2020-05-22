@@ -111,7 +111,7 @@
                 content: 'Coordenadas (Hacer click en el mapa)',
                 position: coordenadas
             });
-            infoWindow2.open(map5);
+            infoWindow.open(map5);
             map5.addListener('click', function(e){
                 infoWindow.close();
                 infoWindow = new google.maps.InfoWindow({ position: e.latLng });
