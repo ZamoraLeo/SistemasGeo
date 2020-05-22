@@ -112,10 +112,10 @@
                 position: coordenadas
             });
             infoWindow.open(map5);
-            map5.addListener('click', function(e){
+            map5.addListener('click', function(evento){
                 infoWindow.close();
-                infoWindow = new google.maps.InfoWindow({ position: e.latLng });
-                infoWindow.setContent(e.latLng.toString());
+                infoWindow = new google.maps.InfoWindow({ position: evento.latLng });
+                infoWindow.setContent(evento.latLng.toString());
                 infoWindow.open(map5);
             });
         }
