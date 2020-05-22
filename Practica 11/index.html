@@ -46,11 +46,11 @@
         <div class="row">
             <div class="col-12 col-md-6">
                 <div id="map5"></div>
-                <p>Mapa Zoom Desactivado</p>
+                <p>Mapa Opciones Modificadas</p>
             </div>
             <div class="col-12 col-md-6">
                 <div id="map6"></div>
-                <p>Mapa ControlOptions</p>
+                <p>Mapa 6</p>
             </div>
         </div>
     </div>
@@ -110,6 +110,12 @@
                 fullscreenControl: true
             };
             var map5 = new google.maps.Map(document.getElementById('map5'),propiedades5);
+
+            var propiedades6 = {
+                center: coordenadas,
+                zoom: 12
+            };
+            var map6 = new google.maps.Map(document.getElementById('map6'),propiedades6);
         }
     </script>
     
