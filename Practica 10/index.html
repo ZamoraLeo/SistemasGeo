@@ -30,19 +30,20 @@
             <div class="col-12" id="datos"></div>
         </div>
     </div>
+
     <div id="map"></div>
 
     <script>
         function iniciaMapa(){
-            var coordenadas = { lat: 21.152639, lng:  -101.711598 };
-            
             var propiedades = {
-                center: coordenadas,
+                center: { 
+                    lat: 21.152639, lng:  -101.711598
+                },
                 zoom: 12
             };
-            var mapa = document.getElementById('map');
+            var mapa = document.getElementById("map");
             var map = new google.maps.Map(mapa, propiedades);
-        }
+            }
     </script>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
