@@ -17,15 +17,27 @@
     </style>
 </head>
 <body>
+    <div class="container text-center small">
+        <div class="row">
+            <div class="col-6">
+                <button class="btn btn-sm btn-success">Watch Position</button>
+            </div>
+            <div class="col-6">
+                <button class="btn btn-sm btn-dark">Detener</button>
+            </div>
+        </div>
+    </div>
     <div id="map"></div>
 
     <script>
-        var coordenadas = { lat: 21.152639, lng:  -101.711598 };
-        var propiedades = {
-        center: coordenadas,
-        zoom: 12
-        };
-        var map1 = new google.maps.Map(document.getElementById('map'),propiedades);
+        function iniciaMapa(){
+            var coordenadas = { lat: 21.152639, lng:  -101.711598 };
+            var propiedades = {
+                center: coordenadas,
+                zoom: 12
+            };
+            var map1 = new google.maps.Map(document.getElementById('map'),propiedades);
+        }
     </script>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
