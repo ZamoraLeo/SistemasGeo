@@ -51,6 +51,7 @@
             <div class="col-12 col-md-6">
                 <div id="map6"></div>
                 <p>Mapa con Limites</p>
+                <button class="btn btn-danger" id="btnCentrar">Centrar</button>
             </div>
         </div>
     </div>
@@ -122,6 +123,10 @@
             var map6 = new google.maps.Map(document.getElementById('map6'),propiedades);
             google.maps.event.addDomListener(map6, 'click', function(){
                 window.alert('Se hizo click en el mapa');
+            });
+            var btn = document.getElementById('btnCentrar')
+            google.maps.event.addDomListener(btn, 'click', function(){
+                map6.panTo(coordenadas);
             });
         }
     </script>
