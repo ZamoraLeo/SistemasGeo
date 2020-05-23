@@ -25,6 +25,9 @@
             <div class="col-6">
                 <button class="btn btn-sm btn-dark">Detener</button>
             </div>
+        </div>}
+        <div class="row">
+            <div class="col-12" id="datos"></div>
         </div>
     </div>
     <div id="map"></div>
@@ -37,7 +40,8 @@
                 center: coordenadas,
                 zoom: 12
             };
-            var map = new google.maps.Map(document.getElementById('map'),propiedades);
+            var mapa = document.getElementById('map');
+            var map = new google.maps.Map(mapa, propiedades);
         }
     </script>
 
