@@ -68,8 +68,16 @@
                         var lat = position.coords.latitude;
                         var lng = position.coords.longitude;
                         var coordenadas = lat + ', ' + lng;
+                        var exactitud = position.coords.accuracy ? position.coords.accuracy : 'no disponible';
+                        var altitud = position.coords.altitude ? position.coords.altitude : 'no disponible';
+                        var velocidad = position.coords.speed ? position.coords.speed : 'no disponible';
+                        var fechayhora = (new Date(position.timestamp)).toString();
                         const html = `
                             <p>Coordenadas: ${ coordenadas }</p>
+                            <p>Exactitud: ${ exactitud }</p>
+                            <p>Altitud: ${ altitud }</p>
+                            <p>Velocidad: ${ velocidad }</p>
+                            <p>Fecha y Hora: ${ fechayhora }</p>
                         `;
                         const datos = document.getElementById('datos');
                         datos.innerHTML = html;
