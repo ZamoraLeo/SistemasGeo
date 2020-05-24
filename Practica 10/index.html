@@ -63,7 +63,7 @@
                 maximumAge: 30 * 1000
             }
             if(navigator.geolocation){
-                boton.addEventListener('click', function(){
+                btnIniciar.addEventListener('click', function(){
                     watchId = navigator.geolocation.watchPosition(function(position){
                         var lat = position.coords.latitude;
                         var lng = position.coords.longitude;
