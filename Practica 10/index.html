@@ -20,10 +20,10 @@
     <div class="container text-center small">
         <div class="row">
             <div class="col-6">
-                <button class="btn btn-sm btn-success">Watch Position</button>
+                <button class="btn btn-sm btn-success" id="btnIniciar">Watch Position</button>
             </div>
             <div class="col-6">
-                <button class="btn btn-sm btn-dark">Detener</button>
+                <button class="btn btn-sm btn-dark" id="btnDetener">Detener</button>
             </div>
         </div>
         <div class="row">
@@ -43,6 +43,40 @@
             };
             var mapa = document.getElementById("map");
             var map = new google.maps.Map(mapa, propiedades);
+            }
+            var icono = {
+                url: "https://media.giphy.com/media/1ZweHMlSaxcc32mSSu/giphy.gif", 
+                scaledSize: new google.maps.Size(50, 50),  
+                origin: new google.maps.Point(0,0),  
+                anchor: new google.maps.Point(0,0) 
+            };
+            var marker = new google.maps.Marker({
+                position: { lat: 0, lng: 0 },
+                icon: icono,
+
+                map: map
+            });
+            var watchId = null;
+            const btnIniciar = document.getElementById("btnIniciar");
+            var positionOptions = {
+                enableHighAccuracy: true,
+                timeout: 10 * 1000,
+                maximumAge: 30 * 1000
+            }
+            if(navigator.geolocation){
+                boton.addEventListener('click', function(){
+                    watchId = navigator.geolocation.watchPosition(function(position){
+                        var lat = position.coords.latitude;
+                        var lng = position.coords.longitude;
+                        var coordenadas = lat + ',' + lng;
+                        const html = `
+                            <p>Coordenadas: ${ coordenadas }</p>
+                        `;
+                    }, error, positionOptions);
+                });
+            }
+            function error(positionError){
+                console.log(positionError.message)
             }
     </script>
     
