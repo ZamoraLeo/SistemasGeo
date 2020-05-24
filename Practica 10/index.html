@@ -72,6 +72,8 @@
                         const html = `
                             <p>Coordenadas: ${ coordenadas }</p>
                         `;
+                        const datos = document.getElementById('datos');
+                        datos.innerHTML = html;
                     }, error, positionOptions);
                 });
             }
