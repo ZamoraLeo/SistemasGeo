@@ -127,7 +127,7 @@
             query: buscar.value,
             fields: ['place_id', 'name', 'formated_address', 'icon', 'geometry']
         };
-        service = new google.maps.places.PlaceService(map);
+        service = new google.maps.places.PlacesService(map);
         service.findPlaceFromQuery(request, function(results, status){
             if(status === google.maps.places.PlaceServiceStatus.OK)
             {
