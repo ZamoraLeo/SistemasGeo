@@ -142,7 +142,7 @@
                 map: map,
                 position: place.geometry.location
             });
-            google.maps.event.addEventListener(marker, 'click', function(){
+            google.maps.event.addListener(marker, 'click', function(){
                 infoWindow.setContent(place.name);
                 infoWindow.open(map,this);
             });
