@@ -132,9 +132,17 @@
         service.findPlaceFromQuery(request, function(results, status){
             if(status === google.maps.places.PlacesServiceStatus.OK)
             {
-                console.log(results);
+                for(var i=0;i< results.length;i++){
+                    createMarker(results[1]);
+                }
             }
         });
+        function createMarker(place){
+            var marker = new google.maps.Marker({
+                map: map,
+                position: place.geometry.location
+            });
+        }
     });
     function iniciaMapa(){
         var coordenadas = { lat: 21.152639, lng:  -101.711598 };
