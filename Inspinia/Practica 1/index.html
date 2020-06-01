@@ -97,7 +97,7 @@
                 <h2>Mapa con Places</h2>
                 <small>Sistemas GeoReferenciados</small>
                 <input type="text" id="buscar" class="form-control">
-                <button class="btn btn-primary">Buscar</button>
+                <button class="btn btn-primary" id="btnBuscar">Buscar</button>
             </div>
             <div class="col-md-9">
                 <div id="map"></div>
@@ -117,12 +117,20 @@
 </div>
 
 <script>
+    var service;
+    var infoWindow;
+    var btnBuscar = document.getElementById('btnBuscar');
+    btnBuscar.addEventListener('click', function(){
+        var buscar = document.getElementById('buscar');
+        console.log(buscar);
+    });
     function iniciaMapa(){
         var coordenadas = { lat: 21.152639, lng:  -101.711598 };
         var propiedades = {
             center: coordenadas,
             zoom: 12
         };
+        infoWindow = new google.maps.infoWindow();
         var map = new google.maps.Map(document.getElementById('map'),propiedades);
     }
 </script>
