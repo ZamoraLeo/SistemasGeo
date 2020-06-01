@@ -134,6 +134,7 @@
             {
                 for(var i=0;i< results.length;i++){
                     createMarker(results[i]);
+                    map.setCenter(results[0].geometry.location);
                 }
             }
         });
@@ -150,7 +151,7 @@
                 icon: icono
             });
             google.maps.event.addListener(marker, 'click', function(){
-                infoWindow.setContent(place.name + " " + place.formatted.address);
+                infoWindow.setContent(place.name + ", " + place.formatted_address);
                 infoWindow.open(map,this);
             });
         }
