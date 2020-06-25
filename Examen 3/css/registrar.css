@@ -2,6 +2,7 @@ body{
     margin: 0;
     padding: 0;
     font-family: "Roboto", sans-serif;
+    background-color: #FFA31C;
   }
   
   header{
@@ -40,7 +41,7 @@ body{
   }
   
   .logout_btn:hover{
-    background: #0B87A6;
+    background: #FFA31C;
   }
   
   .sidebar {
@@ -126,6 +127,7 @@ body{
     height: 100vh;
     transition: 0.5s;
     padding-top: 10px;
+    background-color: #FFA31C;
   }
   
   #check:checked ~ .content{
