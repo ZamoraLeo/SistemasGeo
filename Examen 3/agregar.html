@@ -10,6 +10,12 @@
     <link rel="stylesheet" href="css/registrar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
     <link rel="stylesheet" href="css/login.css">
+    <style>
+      #mapa {
+          width: 100%;
+          height: 500px;
+      }
+      </style>
   </head>
   <body>
 
@@ -52,26 +58,6 @@
         </div>
       </div>
     </div>
-    <script>
-
-      function iniciaMapa() {
-          var coordenadas = {
-              lat: 21.152639,
-              lng: -101.711598
-          }
-
-          var map = new google.maps.Map(
-              document.getElementById('mapa'),
-              {
-                  center: coordenadas,
-                  zoom: 15
-              }
-          );
-
-          var marcador = new google.maps.Marker({ position: coordenadas, map: map });
-      }
-
-  </script>
     <script>
       var firebaseConfig = {
       apiKey: "AIzaSyB8Vt9CZ8__jXuX9PQlM9t_zEs5KygYEZg",
