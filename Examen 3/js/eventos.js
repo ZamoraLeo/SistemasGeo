@@ -1,5 +1,18 @@
 const db = firebase.firestore();
 const productoslista = document.querySelector("#lista");
+const btnLogout = document.getElementById('btnLogout');
+    btnLogout.addEventListener('click', e => {
+        firebase.auth().signOut();
+     });
+     const auth = firebase.auth();
+     auth.onAuthStateChanged(firebaseUser => {
+        if(firebaseUser) {
+            console.log(firebaseUser);
+        } else {
+            console.log('No Logueado')
+            window.location.href = "login.html"
+        }
+    })
 db.collection('eventos').onSnapshot( snapshot =>{
     let changes = snapshot.docChanges();
     changes.forEach( change => {
@@ -51,16 +64,3 @@ function renderProductos(doc){
         window.location.href = "datos.html"
     });
 }
-const btnLogout = document.getElementById('btnLogout');
-    btnLogout.addEventListener('click', e => {
-        firebase.auth().signOut();
-     });
-     const auth = firebase.auth();
-     auth.onAuthStateChanged(firebaseUser => {
-        if(firebaseUser) {
-            console.log(firebaseUser);
-        } else {
-            console.log('No Logueado')
-            window.location.href = "login.html"
-        }
-    })
