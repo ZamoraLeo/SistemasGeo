@@ -6,8 +6,10 @@
     <script src="https://www.gstatic.com/firebasejs/7.15.4/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-firestore.js"></script>
-    <link rel="stylesheet" href="css/style.css">
+    <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-storage.js"></script>
+    <link rel="stylesheet" href="css/registrar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    <link rel="stylesheet" href="css/login.css">
   </head>
   <body>
 
@@ -34,13 +36,42 @@
     </div>
     <div class="content">
       <div class="container">
-        <img style="
-          display: block;
-          margin-left: auto;
-          margin-right: auto;
-          width: 50%;" src="img/logoMARZ.png">
+        <div class="login-page">
+            <div class="form">
+                <form class="login-form">
+                    <input id="txtNombre" type="text" placeholder="Nombre del Evento"/>
+                    <input id="txtDescripcion" type="text" placeholder="Descripcion"/>
+                    <input id="txtFecha" type="date"/>
+                    <input id="txtHora" type="time"/>
+                    <input id="txtLugar" type="text" placeholder="Lugar"/>
+                    <input id="txtCreditos" type="number" placeholder="N° Creditos"/>
+                    <div id="mapa"></div>
+                    <button type="button" id="btnLogin">Agregar</button>
+                </form>
+            </div>
+        </div>
       </div>
     </div>
+    <script>
+
+      function iniciaMapa() {
+          var coordenadas = {
+              lat: 21.152639,
+              lng: -101.711598
+          }
+
+          var map = new google.maps.Map(
+              document.getElementById('mapa'),
+              {
+                  center: coordenadas,
+                  zoom: 15
+              }
+          );
+
+          var marcador = new google.maps.Marker({ position: coordenadas, map: map });
+      }
+
+  </script>
     <script>
       var firebaseConfig = {
       apiKey: "AIzaSyB8Vt9CZ8__jXuX9PQlM9t_zEs5KygYEZg",
@@ -53,7 +84,7 @@
     };
     firebase.initializeApp(firebaseConfig);
     </script>
-    <script src="js/home.js"></script>
-
+    <script src="js/agregar.js"></script>
+    
   </body>
 </html>

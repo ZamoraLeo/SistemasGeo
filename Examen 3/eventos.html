@@ -6,8 +6,10 @@
     <script src="https://www.gstatic.com/firebasejs/7.15.4/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-firestore.js"></script>
-    <link rel="stylesheet" href="css/style.css">
+    <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-storage.js"></script>
+    <link rel="stylesheet" href="css/eventos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   </head>
   <body>
 
@@ -34,11 +36,8 @@
     </div>
     <div class="content">
       <div class="container">
-        <img style="
-          display: block;
-          margin-left: auto;
-          margin-right: auto;
-          width: 50%;" src="img/logoMARZ.png">
+        <ul id="lista">
+        </ul>
       </div>
     </div>
     <script>
@@ -53,7 +52,7 @@
     };
     firebase.initializeApp(firebaseConfig);
     </script>
-    <script src="js/home.js"></script>
+    <script src="js/eventos.js"></script>
 
   </body>
 </html>

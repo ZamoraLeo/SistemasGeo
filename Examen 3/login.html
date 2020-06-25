@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-firestore.js"></script>
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<body>
+    <div class="login-page">
+        <div class="form">
+          <form class="register-form">
+            <input type="text" placeholder="name"/>
+                <input type="password" placeholder="password"/>
+                <input type="text" placeholder="email address"/>
+                <button>create</button>
+                <p class="message">Ya estas registrado? <a href="#">Logueate</a></p>
+            </form>
+            <form class="login-form">
+                <input id="txtEmail" type="email" placeholder="Correo"/>
+                <input id="txtPassword" type="password" placeholder="Contraseña"/>
+                <button type="button" id="btnLogin">login</button>
+                <p class="message">Aun no te registras? <a id="btnSignUp" href="#">Crea una cuenta!</a></p>
+            </form>
+        </div>
+    </div>
+    <script>
+        var firebaseConfig = {
+        apiKey: "AIzaSyB8Vt9CZ8__jXuX9PQlM9t_zEs5KygYEZg",
+        authDomain: "practica1-63892-d4ece.firebaseapp.com",
+        databaseURL: "https://practica1-63892-d4ece.firebaseio.com",
+        projectId: "practica1-63892-d4ece",
+        storageBucket: "practica1-63892-d4ece.appspot.com",
+        messagingSenderId: "71721413932",
+        appId: "1:71721413932:web:f9e9a3bf89743109c31089"
+      };
+      firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="js/login.js"></script>
+    
+</body>
+</html>
