@@ -35,6 +35,7 @@
       <a href="agregar.html"><i class="fas fa-sliders-h"></i><span>Agregar Evento</span></a>
     </div>
     <div class="content">
+      <div id="mapa"></div>
       <div class="container">
         <div class="login-page">
             <div class="form">
@@ -47,14 +48,25 @@
                     <input id="txtCreditos" type="number" placeholder="N° Creditos"/>
                     <button type="button" id="btnLogin">Agregart</button>
                 </form>
-                <form class="login-form">
-                  <div id="mapa"></div>
-                  hoadogadfiogadiso
-              </form>
             </div>
         </div>
       </div>
     </div>
+    <script>
+      const btnLogout = document.getElementById('btnLogout');
+    btnLogout.addEventListener('click', e => {
+        firebase.auth().signOut();
+     });
+     const auth = firebase.auth();
+     auth.onAuthStateChanged(firebaseUser => {
+        if(firebaseUser) {
+            console.log(firebaseUser);
+        } else {
+            console.log('No Logueado')
+            window.location.href = "login.html"
+        }
+    })
+    </script>
     <script>
 
       function iniciaMapa() {
