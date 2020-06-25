@@ -58,7 +58,7 @@ function renderProductos(doc){
         let id = e.target.parentElement.getAttribute("id");
         db.collection("eventos").doc(id).delete();
     });
-    li.addEventListener("click", (e)=>{
+    nombre.addEventListener("click", (e)=>{
         let id = e.target.parentElement.getAttribute("id");
         localStorage.setItem("id", id);
         window.location.href = "datos.html"

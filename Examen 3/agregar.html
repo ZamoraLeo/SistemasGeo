@@ -78,7 +78,8 @@
                 infoWindow.setContent("Lugar");
                 infoWindow.open(map5);
                 console.log(evento.latLng.toString())
-                console.log(infoWindow.getPosition().lat())
+                localStorage.setItem("lat", infoWindow.getPosition().lat());
+                localStorage.setItem("long", infoWindow.getPosition().lng());
             });      
           }
   </script>
