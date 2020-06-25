@@ -96,11 +96,11 @@
             var marcador = null;
             var map4 = new google.maps.Map(document.getElementById('map4'),propiedades);
             map4.addListener('click', function(e){
+                marcador.remove();
                 console.log(e.latLng);
                 estableceMarcador(e.latLng);
             });
             function estableceMarcador(latLng){
-                var marcador = [];
                 marcador = new google.maps.Marker({
                 position: latLng,
                 map: map4
