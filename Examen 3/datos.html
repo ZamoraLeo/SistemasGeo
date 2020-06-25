@@ -78,8 +78,8 @@
             cd.textContent = "Creditos: " + doc.data().creditos;
             console.log(doc.data().lat);
             coordenadas = {
-                lat: doc.data().lat,
-                lng: doc.data().long
+                lat: Number(doc.data().lat),
+                lng: Number(doc.data().long)
             }
             var map = new google.maps.Map(
                 document.getElementById('mapa'),
