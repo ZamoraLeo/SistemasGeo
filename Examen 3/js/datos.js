@@ -29,3 +29,4 @@ const btnLogout = document.getElementById('btnLogout');
             window.location.href = "login.html"
         }
     })
+    
