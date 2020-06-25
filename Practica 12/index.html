@@ -100,8 +100,8 @@
                 estableceMarcador(e.latLng);
             });
             function estableceMarcador(latLng){
-                clearMarkers();
-                var marcador = new google.maps.Marker({
+                var marcador = null;
+                marcador = new google.maps.Marker({
                 position: latLng,
                 map: map4
                 });
