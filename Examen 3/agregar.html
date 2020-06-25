@@ -65,7 +65,7 @@
                 content: 'Coordenadas (Hacer click en el mapa)',
                 position: coordenadas
             });
-            infoWindow.open(map5);
+            infoWindow.open(mapa);
             mapa.addListener('click', function(evento){
                 infoWindow.close();
                 infoWindow = new google.maps.InfoWindow({ position: evento.latLng });
