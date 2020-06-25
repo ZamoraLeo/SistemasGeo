@@ -11,6 +11,12 @@
     <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <style>
+      #mapa {
+          width: 100%;
+          height: 300px;
+      }
+      </style>
   </head>
   <body>
 
@@ -46,12 +52,29 @@
                         <label id="hr"></label><br>
                         <label id="da"></label><br>
                         <label id="cd"></label><br>
+                        <div id="mapa"></div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
     </div>
+    <script>
+      function iniciaMapa() {
+          var coordenadas = {
+              lat: 21.152639,
+              lng: -101.711598
+          }
+          var map = new google.maps.Map(
+              document.getElementById('mapa'),
+              {
+                  center: coordenadas,
+                  zoom: 15
+              }
+          );
+          var marcador = new google.maps.Marker({ position: coordenadas, map: map, draggable: true, animation: google.maps.Animation.DROP });
+      }
+  </script>
     <script>
       var firebaseConfig = {
       apiKey: "AIzaSyB8Vt9CZ8__jXuX9PQlM9t_zEs5KygYEZg",
@@ -65,5 +88,9 @@
     firebase.initializeApp(firebaseConfig);
     </script>
     <script src="js/datos.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADjOfdGIg-7JiqjoTstMN9el4g-nLhxxA&callback=iniciaMapa" async defer></script>
   </body>
 </html>
