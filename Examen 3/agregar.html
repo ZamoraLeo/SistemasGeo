@@ -59,6 +59,22 @@
       </div>
     </div>
     <script>
+      function iniciaMapa() {
+          var coordenadas = {
+              lat: 21.152639,
+              lng: -101.711598
+          }
+          var map = new google.maps.Map(
+              document.getElementById('mapa'),
+              {
+                  center: coordenadas,
+                  zoom: 15
+              }
+          );
+          var marcador = new google.maps.Marker({ position: coordenadas, map: map });
+      }
+  </script>
+    <script>
       var firebaseConfig = {
       apiKey: "AIzaSyB8Vt9CZ8__jXuX9PQlM9t_zEs5KygYEZg",
       authDomain: "practica1-63892-d4ece.firebaseapp.com",
