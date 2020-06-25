@@ -60,12 +60,6 @@
     </div>
     <script>
       function iniciaMapa() {
-        var coordenadas = { lat: 21.152639, lng:  -101.711598 };
-            var propiedades = {
-                center: coordenadas,
-                zoom: 12
-            };
-        var map5 = new google.maps.Map(document.getElementById('mapa'),propiedades);
         const db = firebase.firestore();
         const id = localStorage.getItem("id");
         let nm = document.getElementById("nm");
@@ -83,15 +77,18 @@
             hr.textContent = "Hora: " + doc.data().hora;
             cd.textContent = "Creditos: " + doc.data().creditos;
             console.log(doc.data().lat);
-            var coordenadas = {
+            coordenadas = {
                 lat: doc.data().lat,
                 lng: doc.data().long
             }
-            marcador = new google.maps.Marker({
-                position: coordenadas,
-                map: map5
-                });
-                map5.panTo(coordenadas);
+            var map = new google.maps.Map(
+                document.getElementById('mapa'),
+                {
+                    center: coordenadas,
+                    zoom: 15
+                }
+            );
+            var marcador = new google.maps.Marker({ position: coordenadas, map: map });
         });
       const btnLogout = document.getElementById('btnLogout');
       btnLogout.addEventListener('click', e => {
