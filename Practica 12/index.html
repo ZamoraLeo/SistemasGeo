@@ -93,14 +93,14 @@
             map3.addListener('zoom_changed', function(){
                 infoWindow.setContent('Zoom: ' + map3.getZoom());
             });
-
+            var marcador = null;
             var map4 = new google.maps.Map(document.getElementById('map4'),propiedades);
             map4.addListener('click', function(e){
                 console.log(e.latLng);
                 estableceMarcador(e.latLng);
             });
             function estableceMarcador(latLng){
-                var marcador = null;
+                var marcador = [];
                 marcador = new google.maps.Marker({
                 position: latLng,
                 map: map4
