@@ -75,7 +75,7 @@
             map5.addListener('click', function(evento){
                 infoWindow.close();
                 infoWindow = new google.maps.InfoWindow({ position: evento.latLng });
-                infoWindow.setContent(Lugar);
+                infoWindow.setContent("Lugar");
                 infoWindow.open(map5);
                 console.log(evento.latLng.toString())
                 console.log(infoWindow.getPosition().lat())
