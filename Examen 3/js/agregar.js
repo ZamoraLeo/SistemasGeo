@@ -30,8 +30,9 @@ btnLogin.addEventListener('click', async (e) => {
     const hora = txtHora.value.toString();
     const lugar = txtLugar.value.toString();
     const creditos = txtCreditos.value.toString();
-    const long = localStorage.getItem("long").toString();
-    const lat = localStorage.getItem("lat").toString();
+    const long = localStorage.getItem("long");
+    const lat = localStorage.getItem("lat");
+    console.log(long)
 
     const response = await db.collection('eventos').doc().set({
         nombre,
