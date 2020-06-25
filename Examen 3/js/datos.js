@@ -16,3 +16,16 @@ ref.get().then(function(doc) {
     hr.textContent = "Hora: " + doc.data().hora;
     cd.textContent = "Creditos: " + doc.data().creditos;
 });
+const btnLogout = document.getElementById('btnLogout');
+    btnLogout.addEventListener('click', e => {
+        firebase.auth().signOut();
+     });
+     const auth = firebase.auth();
+     auth.onAuthStateChanged(firebaseUser => {
+        if(firebaseUser) {
+            console.log(firebaseUser);
+        } else {
+            console.log('No Logueado')
+            window.location.href = "login.html"
+        }
+    })

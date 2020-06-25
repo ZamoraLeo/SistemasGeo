@@ -72,7 +72,18 @@
                   zoom: 15
               }
           );
-          var marcador = new google.maps.Marker({ position: coordenadas, map: map, draggable: true, animation: google.maps.Animation.DROP });
+          var infoWindow = new google.maps.InfoWindow({
+                content: 'Coordenadas (Hacer click en el mapa)',
+                position: coordenadas
+            });
+            infoWindow.open(mapa);
+            mapa.addListener('click', function(evento){
+                infoWindow.close();
+                infoWindow = new google.maps.InfoWindow({ position: evento.latLng });
+                infoWindow.setContent(evento.latLng.toString());
+                console.log(evento.latLng.toString());
+                infoWindow.open(mapa);
+            });
       }
   </script>
     <script>
