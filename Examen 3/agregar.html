@@ -60,8 +60,18 @@
     </div>
     <script>
       function iniciaMapa() {
-        var mapa = new google.maps.Map(document.getElementById('mapa'),propiedades);
-            var infoWindow = new google.maps.InfoWindow({
+          var coordenadas = {
+              lat: 21.152639,
+              lng: -101.711598
+          }
+          var map = new google.maps.Map(
+              document.getElementById('mapa'),
+              {
+                  center: coordenadas,
+                  zoom: 15
+              }
+          );
+          var infoWindow = new google.maps.InfoWindow({
                 content: 'Coordenadas (Hacer click en el mapa)',
                 position: coordenadas
             });
@@ -70,9 +80,9 @@
                 infoWindow.close();
                 infoWindow = new google.maps.InfoWindow({ position: evento.latLng });
                 infoWindow.setContent(evento.latLng.toString());
+                console.log(evento.latLng.toString());
                 infoWindow.open(mapa);
-            });
-      }
+            });      }
   </script>
     <script>
       var firebaseConfig = {
