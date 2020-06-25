@@ -15,6 +15,16 @@ ref.get().then(function(doc) {
     da.textContent = "Fecha: " + doc.data().fecha;
     hr.textContent = "Hora: " + doc.data().hora;
     cd.textContent = "Creditos: " + doc.data().creditos;
+    console.log(doc.data().lat);
+    var coordenadas = {
+        lat: doc.data().lat,
+        lng: doc.data().long
+    }
+    marcador = new google.maps.Marker({
+        position: coordenadas,
+        map: map5
+        });
+        map5.panTo(coordenadas);
 });
 const btnLogout = document.getElementById('btnLogout');
     btnLogout.addEventListener('click', e => {
@@ -29,4 +39,3 @@ const btnLogout = document.getElementById('btnLogout');
             window.location.href = "login.html"
         }
     })
-    
